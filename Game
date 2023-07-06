@@ -1,0 +1,39 @@
+from random import choice
+
+
+jogadas = ['Pedra', 'Papel', 'Tesoura']
+computador = choice(jogadas)
+jogo = True
+
+while jogo:
+
+    
+    menu = str(input("Selecione a sua jogada: Pedra, Papel ou Tesoura"))
+    if menu == computador:
+        print(f'O adversario escolheu {computador}')
+        print('EMPATE')
+        jogo = False
+    elif menu == 'Pedra' and computador != 'Papel':
+        print(f'O adversario escolheu {computador}')
+        print('JOGADOR GANHOU')
+        jogo = False
+    elif menu == 'Papel' and computador != 'Tesoura':
+        print(f'O adversario escolheu {computador}')
+        print('JOGADOR GANHOU')
+        jogo = False
+    elif menu == 'Tesoura' and computador != 'Pedra':
+        print(f'O adversario escolheu {computador}')
+        print('JOGADOR GANHOU')
+        jogo = False
+    elif menu not in jogadas:
+        print('OPÇÃO INVALIDA')
+        jogo = False
+    
+    else:
+        print(f'O adversario escolheu {computador}')
+        print('ADVERSARIO VENCEU')
+        jogo = False
+
+
+print('Obrigado por jogar!')
+
